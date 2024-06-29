@@ -1,10 +1,24 @@
 "use server";
 
 import { openai } from "@ai-sdk/openai";
-import { streamObject } from "ai";
+import { generateObject, streamObject } from "ai";
 import { createStreamableValue } from "ai/rsc";
 import { notificationsSchema } from "./types";
+
 export async function getNotifications(input: string) {
+  "use server";
+
+  const { object: notifications } = await generateObject({
+    model: openai("gpt-3.5-turbo"),
+    system: "You generate three notifications for a messages app.",
+    prompt: input,
+    schema: notificationsSchema,
+  });
+
+  return { notifications };
+}
+
+export async function getStreamedNotifications(input: string) {
   "use server";
   const stream = createStreamableValue();
 
