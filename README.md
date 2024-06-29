@@ -41,7 +41,7 @@ The repo has 4 branches: `main`, `structured-data`, `streamed-generation`,`compa
 1. `structured-data` branch - Has the code to check structured data example
 2. `streamed-generation` branch - Has the code to check streamed generation example
 3. `compare` branch - Has the code to check the UX improvement between streamed vs normal responses
-4. `main` branch - Points to the `compare` branch
+4. `main` branch - Has the comparison example between streamed vs normal responses
 
 ## Learn more
 
